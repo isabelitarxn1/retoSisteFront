@@ -1,0 +1,107 @@
+* {
+    font-family: 'Raleway', 'arial', sans-serif;
+}
+
+    .tittle{        
+            height: 120px;
+            background: #eaf1f1 0% 0% no-repeat padding-box;
+            text-align: center;
+    }
+
+    .textTittle{
+            margin-top: 1%;
+            font: normal normal bold 16px/22px Montserrat;
+    }
+
+    .textSubTittle{
+            font: normal normal normal 14px/18px Montserrat;
+    }
+
+    .btnAgregarCredito {
+        height: 50px;
+        background: #10BBB5 0% 0% no-repeat padding-box;
+        border-radius: 8px;
+        border: none;
+        opacity: 1;
+        color: white;
+        font-size: 14px;
+    }
+
+    .inputSearchName {
+        background: #525F7F1A 0% 0% no-repeat padding-box;
+        border: 1px solid #525F7F4D;
+        border-radius: 8px;
+        opacity: 1;
+        height: 35px;
+        width: 100%;
+        margin-left: -15px;
+    } 
+
+    .inputFilter {
+        background: #F8F8F8 0% 0% no-repeat padding-box;
+        border: 1px solid #A2B4CC;
+        border-radius: 8px;
+        opacity: 1;
+        height: 35px;
+        width: 205px;
+    }
+
+    .tittleFilters {
+        color: #525F7F;
+        text-align: left;
+        font: Regular 14px/20px Raleway;
+        letter-spacing: -0.23px;
+        opacity: 1;
+        font-size: 14px;
+    }
+
+    .botonOrdenar {
+        background: #F8F8F8 0% 0% no-repeat padding-box;
+        color: #1F2038;
+        border: 1px solid #A2B4CC;
+        border-radius: 8px;
+    }
+
+    .btnBajar {
+        background: #6868F4 0% 0% no-repeat padding-box !important;
+        color: whitesmoke !important;
+        font-size: 14px !important;
+    }
+
+    .dropdown-menu {
+        width: 100%;
+    }
+
+    .headerTable {
+        font-size: 14px;
+        color: #525F7F;
+        margin-top: 20px;
+        background-color: #00000008 !important;
+    }
+
+    .bodyTable{
+        font-size: 14px;
+        color: #525F7F;
+        margin-top: 20px;
+    }
+
+    .divTableListCredits {
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        box-shadow: 0px 3px 6px #8898AA26;
+        border-radius: 8px;
+        border: 1px solid #525F7F4D;
+        opacity: 1;
+        margin-top: 10px;
+        height: 40px;
+    }
+
+    .puntosSuspensivos {
+        // width: 230px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    
+    .puntosSuspensivos2 {
+        max-width: 150px;
+    }

@@ -1,0 +1,95 @@
+<div class="tittle">
+
+    <div class="row">
+        <div class="col-5"></div>
+        <div class="col-2 textTittle">Lista de créditos</div>
+        <div class="col-5"></div>
+    </div>
+    
+    <br>
+
+    <div class="row sizeContainerText">
+        <div class="col-3"></div>
+        <div class="col-6 textSubTittle">Encuentra todos los créditos que han realizado tus clientes, puedes ordenarlos por fecha, producto o nombre de tus clientes, también puedes editarlos y así poder tener un control mucho más claro de tus créditos.</div>
+        <div class="col-3"></div>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="row">
+            <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7"></div>
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
+            <div  class="col-xs-2 col-sm-2 col-md-2 col-lg-2" style="padding-right: 0px;">
+                <button class="btnAgregarCredito" style="margin-top: 17px; width: 100%;" (click)='this.createCredit()'>
+                  Nuevo credito
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="border-bottom: 1px solid #525F7F80; padding-top: 1rem; margin-bottom: 1rem;">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                <form [formGroup]='this.filtro'>
+                    <div class="row" style="text-align: left;">
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <label class="tittleFilters">Busca algún cliente</label>
+                            <div>
+                                <input class="inputSearchName" formControlName='filtroNombre' (keyup)='this.filtrarNombre()'>
+                            </div>
+                        </div>
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            <label class="tittleFilters">Filtra tu búsqueda tipo de ID</label>
+                            <div>
+                                <input class="inputFilter col-xs-12 col-sm-12 col-md-12 col-lg-12" maxlength="1" formControlName='filtroID' (keyup)='this.filtrarID()'>
+                            </div>
+                        </div>
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" style="padding-right: 0px;">
+                            
+                        </div>
+                    </div>
+                </form>
+
+
+                <div class="row headerTable divTableListCredits" style="height: 50px; margin-bottom: 2%;">
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 align-self-center text-left">Nombre</div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 align-self-center text-left">Apellido</div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 align-self-center text-left">Celular</div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 align-self-center text-left">Correo</div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 align-self-center text-left">Tipo ID</div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 align-self-center text-left">NúmeroID</div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 align-self-center text-left">Dirección residencia</div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 align-self-center text-left">Ciudad/Barrio</div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 align-self-center text-left">Valor</div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 align-self-center text-left">Estado</div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 align-self-center text-left">Acción</div>
+                </div>
+
+                <div class="row bodyTable divTableListCredits" *ngFor="let credito of this.listCreditsFilter">
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 align-self-center text-left puntosSuspensivos"><strong>{{credito.nombres}}</strong></div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 align-self-center text-left puntosSuspensivos">{{credito.apellidos}}</div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 align-self-center text-left puntosSuspensivos">{{credito.celular}}</div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 align-self-center text-left puntosSuspensivos">{{credito.correo}}</div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 align-self-center text-left puntosSuspensivos">{{credito.tipoID}}</div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 align-self-center text-left puntosSuspensivos">{{credito.numeroID}}</div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 align-self-center text-left puntosSuspensivos">{{credito.direccionResidencia}}</div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 align-self-center text-left puntosSuspensivos">{{credito.ciudad}}</div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 align-self-center text-left puntosSuspensivos"><strong>{{credito.valor}}</strong></div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 align-self-center text-left puntosSuspensivos">{{credito.estado}}</div>
+                    <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 align-self-center text-left puntosSuspensivos">
+                        <img src="../../../../assets/img/pencil.png" (click)='this.editCredit(credito)' width="20%"/>
+                         <img src="../../../../assets/img/delete.png" (click)='this.deleteCredit(credito)'width="20%" style="margin-left: 5px;"/>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+
+    </div>
+</div>
+
